@@ -21,16 +21,16 @@ fn main() {
     let nonce = [0u8; 8];
 
     // Example usage of the ChaCha20 encryption function
-    let input_path = "/home/crestfallen/Documents/secure-file-encryption/secrets.txt";
-    let output_path = "/home/crestfallen/Documents/secure-file-encryption/encrypted/secrets.txt";
+    let input_path = "/home/crestfallen/Documents/secure-file-encryption/public/pfp.jpeg";
+    let output_path = "/home/crestfallen/Documents/secure-file-encryption/encrypted/pfp.jpeg";
 
     let mut data_to_encrypt = read_file(input_path);
     chacha20::encrypt_chacha20(&key, &nonce, &mut data_to_encrypt);
     write_file(output_path, &data_to_encrypt);
 
     // Example usage of the ChaCha20 decryption function
-    let input_path = "/home/crestfallen/Documents/secure-file-encryption/encrypted/secrets.txt";
-    let output_path = "/home/crestfallen/Documents/secure-file-encryption/decrypted/secrets.txt";
+    let input_path = "/home/crestfallen/Documents/secure-file-encryption/encrypted/pfp.jpeg";
+    let output_path = "/home/crestfallen/Documents/secure-file-encryption/decrypted/pfp.jpeg";
 
     let mut data_to_decrypt = read_file(input_path);
     chacha20::decrypt_chacha20(&key, &nonce, &mut data_to_decrypt);
